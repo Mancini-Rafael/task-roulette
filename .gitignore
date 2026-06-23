@@ -1,0 +1,16 @@
+# XcodeGen output — regenerate with `xcodegen generate`
+*.xcodeproj
+
+# Release pipeline output
+build/
+
+# Xcode / SwiftPM
+.build/
+DerivedData/
+*.xcuserstate
+xcuserdata/
+.swiftpm/
+Package.resolved
+
+# macOS
+.DS_Store
