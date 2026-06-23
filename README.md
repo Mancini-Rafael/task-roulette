@@ -86,25 +86,11 @@ make build     # compile only
 make test      # run the unit tests
 make icon      # regenerate the app icon
 make generate  # (re)create Roulette.xcodeproj after editing project.yml
-make release   # notarized DMG — needs a Developer ID cert (see below)
+make release   # notarized DMG — needs an Apple Developer ID cert
 ```
 
 The `.xcodeproj` is **generated** and gitignored; `make generate` recreates it. Prefer
 Xcode's GUI? `make generate`, then `open Roulette.xcodeproj` and Run (⌘R).
-
-## Distributing to others
-
-For people to download and run it **without** Gatekeeper warnings, the app must be signed
-with a **Developer ID** certificate and **notarized** by Apple — which requires the
-[Apple Developer Program](https://developer.apple.com/programs/) ($99/yr). There is no way
-around Gatekeeper for general distribution. Once you have a cert:
-
-```sh
-TEAM_ID=ABCDE12345 NOTARY_PROFILE=RouletteNotary make release
-```
-
-produces a notarized, stapled `Roulette.dmg`. See `scripts/build-release.sh` for the
-one-time keychain/credential setup and `TODO.md` for the full release checklist.
 
 ## Project structure
 
